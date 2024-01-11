@@ -1,13 +1,117 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root{
+    --section-overlay: rgba(0,0,0,0.7);
+    --background-overlay: rgba(0,0,0,0.2);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+.overlay{
+    background-color: var(--background-overlay);
+}
+
+.App img{
+    background-color: var(--background-overlay);
+    /* width: 100%; */
+}
+
+.section{
+    width: 100%;
+    padding: 1rem;
+    border-radius: 0.4rem;
+    color: white;
+}
+
+.section__inputs , .section__temperature{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--section-overlay);
+}
+
+.section__inputs>input{
+    border: 0.5px solid gray;
+    border-radius: 0.4rem;
+    background-color: transparent;
+    color: white;
+    padding: 0.5rem;
+    font-size: 20px;
+    font-weight: 200;
+}
+
+.section__inputs>input:focus{
+    outline: none;
+}
+
+
+
+@media screen and(min-width: 450px ) {
+    .section__inputs , .section__temperature{
+        display: block;
+    }    
+}
+
+
+
+.fade-in {
+    animation: fadeIn ease 1.5s;
+    }
+    @keyframes fadeIn{
+        0% {
+        opacity:0;
+        }
+        100% {
+        opacity:1;
+        }
+    }
+
+    .slide-right {
+            animation: 1.5s slide-right;
+        }
+        @keyframes slide-right {
+            from {
+            margin-left: -100%;
+            }
+            to {
+            margin-left: 0%;
+            }
+        }
+
+
+.slide-left {
+    animation: 1s slide-left;
+    }
+    @keyframes slide-left {
+        from {
+            margin-left: 100%;
+        }
+        to {
+            margin-left: 0%;
+        }
+}
+
+
+.slide-up {
+    animation: 1.5s slide-up;
+    }
+    @keyframes slide-up {
+        from {
+            margin-bottom: 100%;
+        }
+        to {
+            margin-bottom: 0%;
+        }
+}
+
+body::-webkit-scrollbar {
+    display: none;
+    }

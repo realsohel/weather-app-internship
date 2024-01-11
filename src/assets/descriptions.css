@@ -1,0 +1,52 @@
+
+:root{
+    --section-overlay: rgba(0,0,0,0.7);
+    --background-overlay: rgba(0,0,0,0.2);
+}
+
+
+.card{
+    background-color: var(--section-overlay);
+}
+
+@media screen and (max-width: 1024px ) {
+    .sectioon__descriptions{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media screen and (max-width: 550px ) {
+    .sectioon__descriptions{
+        grid-template-columns: 1fr ;
+    }
+}
+/* @media screen and (max-width: 1024px ) {
+    .sectioon__descriptions{
+        grid-template-columns: 1fr ;
+    }
+} */
+
+.fade-in {
+    animation: fadeIn ease 2s;
+    }
+    @keyframes fadeIn{
+        0% {
+        opacity:0;
+        }
+        100% {
+        opacity:1;
+        }
+    }
+
+
+
+.slide-up {
+    animation: 1.5s slide-up;
+    }
+    @keyframes slide-up {
+        from {
+            margin-bottom: 100%;
+        }
+        to {
+            margin-bottom: 0%;
+        }
+}
