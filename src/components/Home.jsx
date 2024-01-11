@@ -11,14 +11,13 @@ import { FaSearch } from "react-icons/fa";
 const Home = () => {
 
     const[weather,Setweather] = useState(null);
-    const[units,Setunits] = useState("metric");
-    const [city,Setcity] = useState("mumbai");
+    const[units,Setunits] = useState("metric"); 
+    const [city,Setcity] = useState("mumbai"); 
     const [bgimg,Setbgimg] = useState(hotBg);
     const [inputValue, setInputValue] = useState("");
 
 
     useEffect(()=>{
-
         const fetchWeatherData= async()=>{
         const data = await getFormattedData(city,units);
         if(data.cod!==200){
@@ -29,7 +28,7 @@ const Home = () => {
         Setweather(data);
         // console.log(data)
 
-        const tempBg = units === "metric"?20:68;
+        const tempBg = units === "metric"?20:68; 
         if(data.temp >tempBg){
             Setbgimg(hotBg);
         }else{

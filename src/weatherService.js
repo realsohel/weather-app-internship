@@ -37,14 +37,8 @@ const getFormattedData= async(city, units= 'metric')=>{
     }
     } 
     catch (error) {
-        const {cod,message} = error;
-        console.log(`COD: ${cod} and msg: ${message}`)
-        return {
-            cod,
-            message
-        };
+        return (error)
     }
-
     
     
 }
